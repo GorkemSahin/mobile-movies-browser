@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Src from './src/Screens';
+import Src from './src';
 
 
 function App() {
