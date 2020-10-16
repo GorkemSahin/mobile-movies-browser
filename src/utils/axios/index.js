@@ -8,7 +8,7 @@ const instance = axios.create({
 
 instance.interceptors.request.use(
   async (config) => {
-    config.params = {api_key: API_KEY}
+    config.params = {...config.params, api_key: API_KEY}
     return config;
   },
   (error) => {

@@ -1,32 +1,47 @@
 import api from '../../api';
 import { takeLeading, put } from '@redux-saga/core/effects';
 import {
-  FETCH_MOVIES,
-  SET_MOVIES
+  FETCH_POPULAR_MOVIES,
+  FETCH_MOVIES_BY_GENRE
 } from './constants';
 import {
-  fetchMoviesAction,
-  setMoviesAction
+  setPopularMoviesAction,
+  setMoviesByGenreAction
 } from './actions';
 
-function* fetchMovies(action) {
+function* fetchPopularMovies(action) {
   try {
-    const resp = yield api.movie.fetchMovies();
-    console.log("Fetch Saga: ")
-    console.log(resp.data.results)
-    yield put(setMoviesAction(resp.data.results));
+    const resp = yield api.movie.fetchPopularMovies();
+    yield put(setPopularMoviesAction(resp.data.results));
   } catch (e) {
-    yield put(setMoviesAction([]));
+    yield put(setPopularMoviesAction([]));
     if (action.onFailure) {
       action.onFailure();
     }
   }
 }
 
-function* watchFetchMovies() {
-  yield takeLeading(FETCH_MOVIES, fetchMovies);
+function* watchFetchPopularMovies() {
+  yield takeLeading(FETCH_POPULAR_MOVIES, fetchPopularMovies);
+}
+
+function* fetchMoviesByGenre(action) {
+  try {
+    const resp = yield api.movie.fetchMoviesByGenre(action.genreId);
+    yield put(setMoviesByGenreAction(resp.data.results));
+  } catch (e) {
+    yield put(setMoviesByGenreAction([]));
+    if (action.onFailure) {
+      action.onFailure();
+    }
+  }
+}
+
+function* watchFetchMoviesByGenre() {
+  yield takeLeading(FETCH_MOVIES_BY_GENRE, fetchMoviesByGenre);
 }
 
 export const movieSagas = [
-  watchFetchMovies()
+  watchFetchPopularMovies(),
+  watchFetchMoviesByGenre()
 ];

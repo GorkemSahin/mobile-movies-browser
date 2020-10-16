@@ -6,7 +6,7 @@ export default ({movies}) => {
   return (
     <View style={{ flex: 1, flexDirection: "row" }}>
       {movies ? (
-        movies.slice(0,3).map((movie) => (
+        movies.map((movie) => (
           <Card movie={movie}></Card>
         ))
       ) : (

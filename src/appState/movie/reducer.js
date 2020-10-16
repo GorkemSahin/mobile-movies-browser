@@ -1,13 +1,15 @@
 import {
   initialState,
-  SET_MOVIES
+  SET_POPULAR_MOVIES,
+  SET_MOVIES_BY_GENRE
 } from './constants';
-import update from 'immutability-helper';
 
 export const movieReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_MOVIES:
-      return update(state, {movies: {$set: action.movies}});
+    case SET_POPULAR_MOVIES:
+      return { ...state, popularMovies: action.movies };
+    case SET_MOVIES_BY_GENRE:
+        return { ...state, moviesByGenre: action.movies };
     default:
       return state;
   }

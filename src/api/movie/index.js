@@ -1,7 +1,11 @@
 import axios from '../../utils/axios';
 
-const fetchMovies = async () => {
-  return await axios.get(`discover/movie?sort_by=popularity.desc`);
+const fetchPopularMovies = async () => {
+  return await axios.get(`movie/popular`);
 };
 
-export default {fetchMovies};
+const fetchMoviesByGenre = async (genreId) => {
+  return await axios.get(`discover/movie`, { params: { with_genres: genreId } })
+}
+
+export default {fetchPopularMovies, fetchMoviesByGenre};
