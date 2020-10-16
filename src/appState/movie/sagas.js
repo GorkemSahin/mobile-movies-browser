@@ -12,8 +12,9 @@ import {
 function* fetchMovies(action) {
   try {
     const resp = yield api.movie.fetchMovies();
-    console.log(resp)
-    yield put(setMoviesAction(resp.data.items));
+    console.log("Fetch Saga: ")
+    console.log(resp.data.results)
+    yield put(setMoviesAction(resp.data.results));
   } catch (e) {
     yield put(setMoviesAction([]));
     if (action.onFailure) {

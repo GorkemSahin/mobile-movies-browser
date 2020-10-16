@@ -1,6 +1,6 @@
 import {createSelector} from 'reselect';
 
-export const movieSelector = createSelector(
-  (state) => state.movies,
-  (movies) => movies,
+export const moviesSelector = createSelector(
+  (state) => state.movie.movies,
+  (movies) => movies
 );
