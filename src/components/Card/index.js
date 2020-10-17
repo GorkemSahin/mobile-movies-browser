@@ -1,18 +1,33 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { TouchableOpacity, View, Image, Text } from 'react-native';
+import styles from './styles';
 import { IMAGE_URL } from '@env'
-import { Card } from 'react-native-elements'
+import {useNavigation} from '@react-navigation/core';
 
 export default ({ movie }) => {
+  const navigation = useNavigation();
   return (
-    <Card containerStyle={{ flex: 1, margin: 0, padding: 0 }} >
-      <Card.Image source={{ uri: IMAGE_URL + movie.poster_path }}></Card.Image>
-      <Card.Title >
-        { movie.title || movie.name }
-      </Card.Title>
-      <Text>
-        { movie.release_date || movie.first_air_date }
-      </Text>
-    </Card>
+    <TouchableOpacity style={{ flex: 1 }} onPress={()=>{navigation.navigate("Details", {movie})}}>
+      <View style={ styles.cardContainer }>
+        <View style={ styles.imageContainer }>
+          <Image
+            style={ styles.image }
+            source={{ uri: IMAGE_URL + movie.poster_path }}
+          />
+        </View>
+        <View style={ styles.infoContainer }>
+          <View style={ styles.titleContainer }>
+            <Text style={ styles.title }>
+              { movie.title || movie.name }
+            </Text>
+          </View>
+          <View style={ styles.dateContainer }>
+            <Text style={ styles.date }>
+              { movie.release_date || movie.first_air_date }
+            </Text>
+          </View>
+        </View>
+      </View>
+    </TouchableOpacity>
   );
 };

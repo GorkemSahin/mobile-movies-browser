@@ -8,6 +8,7 @@ import { fetchGenresAction } from '../../appState/genre/actions';
 import { threePopularTvsSelector } from '../../appState/tv/selectors';
 import Category from '../../components/Category';
 import FeaturedCard from '../../components/FeaturedCard';
+import colors from '../../constants/colors';
 
 const category = { name: "Name", description: "Description" }
 
@@ -30,9 +31,9 @@ export default ({navigation}) => {
   const allMovies = useSelector(moviesSelector);
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: colors.gray }}>
       <ScrollView>
-        { featuredMovie ? <FeaturedCard movie={featuredMovie} containerStyle={{ flex: 1 }}></FeaturedCard> : <></> }
+        { featuredMovie ? <FeaturedCard movie={featuredMovie} containerStyle={{ height: 300 }}></FeaturedCard> : <></> }
         <Category category={{ name: "Popular Movies", description: "Description" }} movies={popularMovies} containerStyle={{ flex: 1 }}></Category>
         <Category category={{ name: "Popular TV Shows", description: "Description" }} movies={popularTvs} containerStyle={{ flex: 1 }}></Category>
         <Category category={{ name: "Family Movies", description: "Description" }} movies={familyMovies} containerStyle={{ flex: 1 }}></Category>

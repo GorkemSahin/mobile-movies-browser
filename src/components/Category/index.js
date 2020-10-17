@@ -1,22 +1,30 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Button } from 'react-native';
+import { View, Text } from 'react-native';
+import styles from './styles';
 import Carousel from '../Carousel';
+import Button from '../Button';
 
 export default ({ category, movies }) => {
   return (
-    <View style={{ margin: 8 }}>
-      <View style={{ flex: 1, flexDirection: "row" }}>
-        <View style={{ flex: 1 }}>
-          <Text style={{ flex: 1, fontWeight: 'bold' }}>
-            {category.name}
-          </Text>
-          <Text style={{ flex: 1 }}>
-            {"Description"}
-          </Text>
+    <View style={ styles.categoryContainer }>
+      <View style={ styles.headerContainer }>
+        <View style={ styles.infoContainer }>
+          <View style={ styles.nameContainer }>
+            <Text style={ styles.name }>
+              {category.name}
+            </Text>
+          </View>
+          <View style={ styles.descriptionContainer }>
+            <Text style={ styles.description }>
+              {"Description"}
+            </Text>
+          </View>
         </View>
-        <Button title={"MORE"} style={{ flex: 1 }}></Button>
+        <View style={ styles.buttonContainer }>
+          <Button title={"MORE"}></Button>
+        </View>
       </View>
-      <Carousel movies={movies} containerStyle={{ flex: 2 }}></Carousel>
+      <Carousel movies={ movies }></Carousel>
     </View>
   );
 };

@@ -1,13 +1,15 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { View } from 'react-native';
 import Card  from '../Card';
+import styles from './styles';
+
 
 export default ({movies}) => {
   return (
-    <View style={{ flex: 1, flexDirection: "row" }}>
+    <View style={ styles.carouselContainer }>
       {movies ? (
         movies.map((movie) => (
-          <Card movie={movie}></Card>
+          <Card movie={ movie }></Card>
         ))
       ) : (
         <></>
