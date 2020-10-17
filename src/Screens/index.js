@@ -3,8 +3,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Discover from './Discover';
 import Details from './Details';
+import Player from './Player';
 import colors from '../constants/colors';
-import { FontAwesome } from '@expo/vector-icons';
 import SearchButton from '../components/SearchButton';
 
 const Stack = createStackNavigator();
@@ -21,6 +21,7 @@ export default function App() {
           ),
         }} />
         <Stack.Screen name="Details" component={Details} />
+        <Stack.Screen name="Player" component={Player} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -13,7 +13,7 @@ export default StyleSheet.create({
     backgroundColor: colors.pink,
     borderRadius: 100,
     position: 'absolute',
-    right: distances.halfDistance,
+    right: distances.defaultDistance,
     top: -35,
   }
 });

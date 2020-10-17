@@ -2,7 +2,7 @@ import {createSelector} from 'reselect';
 
 export const featuredMovieSelector = createSelector(
   (state) => state.movie.popularMovies,
-  (movies) => movies ? movies.sort((a, b) => (b.popularity - a.popularity))[0] : null
+  (movies) => movies ? movies.sort((a, b) => (b.popularity - a.popularity))[19] : null
 );
 
 export const threePopularMoviesSelector = createSelector(
