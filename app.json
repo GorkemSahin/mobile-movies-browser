@@ -1,12 +1,16 @@
 {
-  "name": "Assignment",
-  "displayName": "Assignment",
   "expo": {
-    "name": "Assignment",
-    "slug": "Assignment",
-    "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+   "name": "Assignment",
+   "icon": "./app-icon.png",
+   "version": "1.0.0",
+   "slug": "Assignment",
+   "ios": {
+     "bundleIdentifier": "com.GorkemSahin.Assignment",
+     "buildNumber": "1.0.0"
+   },
+   "android": {
+     "package": "com.GorkemSahin.Assignment",
+     "versionCode": 1
+   }
   }
 }
