@@ -3795,6 +3795,13 @@ expo@~39.0.2:
     unimodules-task-manager-interface "~5.3.0"
     uuid "^3.4.0"
 
+expokit@^37.0.0:
+  version "37.0.0"
+  resolved "https://registry.yarnpkg.com/expokit/-/expokit-37.0.0.tgz#7e0df3554778277d2c60a9fa4ec3ea8b2b0bf594"
+  integrity sha512-wWYJflw6OEsNAd7C8Rn8BVuHlIfGqHtEhdEow7C3Tu88DxafV6i4YTef3gPm+jhkyKz70lBeqLil5UgIRhGynw==
+  dependencies:
+    jsc-android "^245459.0.0"
+
 extend-shallow@^1.1.2:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/extend-shallow/-/extend-shallow-1.1.4.tgz#19d6bf94dfc09d76ba711f39b872d21ff4dd9071"
@@ -6869,7 +6876,7 @@ react-native-status-bar-height@^2.5.0:
   resolved "https://registry.yarnpkg.com/react-native-status-bar-height/-/react-native-status-bar-height-2.5.0.tgz#bc0fb85230603850aab9667ee8111a62954de90c"
   integrity sha512-sYBCPYA/NapBSHkdm/IVL4ID3LLlIuLqINi2FBDyMkc2BU9pfSGOtkz9yfxoK39mYJuTrlTOQ7mManARUsYDSA==
 
-react-native-unimodules@~0.11.0:
+react-native-unimodules@^0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/react-native-unimodules/-/react-native-unimodules-0.11.0.tgz#78483ee4e7eb27b439d34c3ba7455f40087ff166"
   integrity sha512-iIxcr9TmgciM/lzOvak+lBkdeGKw74kbMIkr1zxKskhOwLq19kGtYl0/DQm+jcwbsEzTX83SaEPX0C0jqbfb/A==

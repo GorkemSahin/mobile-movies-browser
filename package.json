@@ -16,6 +16,7 @@
     "expo-splash-screen": "~0.6.2",
     "expo-status-bar": "~1.0.2",
     "expo-updates": "~0.3.2",
+    "expokit": "^37.0.0",
     "immutability-helper": "^3.1.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -26,7 +27,7 @@
     "react-native-reanimated": "~1.13.0",
     "react-native-safe-area-context": "3.1.4",
     "react-native-screens": "~2.10.1",
-    "react-native-unimodules": "~0.11.0",
+    "react-native-unimodules": "^0.11.0",
     "react-native-video": "^5.1.0-alpha8",
     "react-native-web": "~0.13.12",
     "react-redux": "^7.2.1",
@@ -43,5 +44,7 @@
   "jest": {
     "preset": "react-native"
   },
-  "private": true
+  "private": true,
+  "name": "Assignment",
+  "version": "1.0.0"
 }

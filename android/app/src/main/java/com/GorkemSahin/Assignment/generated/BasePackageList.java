@@ -1,4 +1,4 @@
-package com.assignment.generated;
+package com.GorkemSahin.Assignment.generated;
 
 import java.util.Arrays;
 import java.util.List;

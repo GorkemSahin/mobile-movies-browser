@@ -1,4 +1,4 @@
-package com.assignment;
+package com.GorkemSahin.Assignment;
 
 import android.os.Bundle;
 
