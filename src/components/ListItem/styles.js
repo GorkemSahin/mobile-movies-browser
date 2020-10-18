@@ -6,23 +6,29 @@ import distances from '../../constants/distances';
 export default StyleSheet.create({
   cardContainer: {
     flex: 1,
+    flexDirection: "row",
     backgroundColor: colors.white,
     borderColor: colors.gray,
     borderWidth: 1,
     margin: distances.quarterDistance
   },
+  container: {
+    flex: 1, 
+    height: 140,
+    flexDirection: "row"
+  },
   imageContainer: {
-    flex: 2
+    flex: 1
   },
   infoContainer: {
-    flex: 1,
-    padding: distances.quarterDistance
+    flex: 4,
+    padding: distances.halfDistance
   },
   titleContainer: {
-    flex: 2
-  },
-  dateContainer: {
     flex: 1
+  },
+  overviewContainer: {
+    flex: 4
   },
   image: {
     flex: 1,
@@ -34,7 +40,7 @@ export default StyleSheet.create({
     flex: 2,
     fontWeight: "bold"
   },
-  date: {
+  overview: {
     fontSize: fonts.normal,
     color: colors.black,
     flex: 1

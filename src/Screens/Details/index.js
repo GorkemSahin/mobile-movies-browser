@@ -13,6 +13,6 @@ export default ({ route }) => {
       <ImageBackground style={ styles.image } imageStyle={{ resizeMode: "cover" }} source={{ uri: IMAGE_URL + movie.poster_path }}>
         <DescriptionCard movie={ movie }></DescriptionCard>
       </ImageBackground>
-      </View>
+    </View>
   );
 };
