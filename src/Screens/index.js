@@ -6,22 +6,25 @@ import Details from './Details';
 import Player from './Player';
 import colors from '../constants/colors';
 import SearchButton from '../components/SearchButton';
+import Orientation from 'react-native-orientation-locker';
 
 const Stack = createStackNavigator();
 
 export default function App() {
-  // const [initialState, setInitialState] = React.useState();
+  useEffect(() =>{
+    Orientation.lockToPortrait();
+  },[]);
 
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerTintColor: colors.pink }} navigationOptions={{ headerTransparent: true }}>
-        <Stack.Screen name="Discover" component={Discover} options={{
+        <Stack.Screen name="Discover" component={ Discover } options={{
           headerRight: () => (
             <SearchButton></SearchButton>
           ),
         }} />
-        <Stack.Screen name="Details" component={Details} />
-        <Stack.Screen name="Player" component={Player} />
+        <Stack.Screen name="Details" component={ Details } />
+        <Stack.Screen name="Player" component={ Player } options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
