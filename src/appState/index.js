@@ -9,7 +9,7 @@ import { genreSagas } from './genre/sagas';
 import { tvSagas } from './tv/sagas';
 
 const reducer = combineReducers({
-  movie: movieReducer,
+  movies: movieReducer,
   tvs: tvReducer,
   genres: genreReducer
 });

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { View, ScrollView } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { featuredMovieSelector, moviesSelector, threeDocumentaryMoviesSelector, threeFamilyMoviesSelector, threePopularMoviesSelector } from '../../appState/movie/selectors';
-import { fetchPopularMoviesAction, fetchMoviesByGenreAction } from '../../appState/movie/actions';
+import { featuredMovieSelector, popularMoviesSelector, documentaryMoviesSelector, familyMoviesSelector } from '../../appState/movie/selectors';
+import { fetchMoviesAction } from '../../appState/movie/actions';
 import { fetchTvsAction } from '../../appState/tv/actions';
 import { fetchGenresAction } from '../../appState/genre/actions';
 import { threePopularTvsSelector } from '../../appState/tv/selectors';
@@ -12,27 +12,31 @@ import colors from '../../constants/colors';
 
 const category = { name: "Name", description: "Description" }
 
-export default ({navigation}) => {
+export default () => {
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchPopularMoviesAction());
+    dispatch(fetchMoviesAction());
     dispatch(fetchGenresAction());
     dispatch(fetchTvsAction());
-    dispatch(fetchMoviesByGenreAction("10751|99"));
+    setTimeout(() => {
+      dispatch(fetchMoviesAction("10751"));
+    }, 500);
+    setTimeout(() => {
+      dispatch(fetchMoviesAction("99"));
+    }, 1000);
   }, []);
 
   const featuredMovie = useSelector(featuredMovieSelector);
-  const popularMovies = useSelector(threePopularMoviesSelector);
+  const popularMovies = useSelector(popularMoviesSelector);
   const popularTvs = useSelector(threePopularTvsSelector);
-  const familyMovies = useSelector(threeFamilyMoviesSelector);
-  const documentaryMovies = useSelector(threeDocumentaryMoviesSelector);
-  const allMovies = useSelector(moviesSelector);
+  const familyMovies = useSelector(familyMoviesSelector);
+  const documentaryMovies = useSelector(documentaryMoviesSelector);
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.gray }}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         { featuredMovie ? <FeaturedCard movie={featuredMovie} containerStyle={{ height: 300 }}></FeaturedCard> : <></> }
         <Category category={{ name: "Popular Movies", description: "Description" }} movies={popularMovies} containerStyle={{ flex: 1 }}></Category>
         <Category category={{ name: "Popular TV Shows", description: "Description" }} movies={popularTvs} containerStyle={{ flex: 1 }}></Category>

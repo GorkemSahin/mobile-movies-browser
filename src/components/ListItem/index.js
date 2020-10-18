@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, View, Image, Text } from 'react-native';
 import styles from './styles';
-import { IMAGE_URL } from '@env'
+import { THUMBNAIL_URL } from '@env'
 import {useNavigation} from '@react-navigation/core';
 
 export default ({ movie }) => {
@@ -15,7 +15,7 @@ export default ({ movie }) => {
         <View style={ styles.imageContainer }>
           <Image
             style={ styles.image }
-            source={{ uri: IMAGE_URL + movie.poster_path }}
+            source={{ uri: THUMBNAIL_URL + movie.poster_path }}
           />
         </View>
         <View style={ styles.infoContainer }>

@@ -6,7 +6,7 @@ import fonts from '../../constants/fonts';
 export default StyleSheet.create({
   categoryContainer: {
     flex: 1,
-    margin: distances.halfDistance,
+    marginVertical: distances.halfDistance,
     borderColor: colors.black
   },
   headerContainer: {
@@ -14,7 +14,7 @@ export default StyleSheet.create({
     flexDirection: "row",
     justifyContent: 'space-between',
     marginTop: distances.halfDistance,
-    marginHorizontal: distances.quarterDistance
+    marginHorizontal: distances.halfDistance
   },
   infoContainer: {
     flex: 1,

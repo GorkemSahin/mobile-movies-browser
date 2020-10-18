@@ -1,47 +1,28 @@
 import api from '../../api';
-import { takeLeading, put } from '@redux-saga/core/effects';
+import { takeEvery, takeLeading, put } from '@redux-saga/core/effects';
 import {
-  FETCH_POPULAR_MOVIES,
-  FETCH_MOVIES_BY_GENRE
+  FETCH_MOVIES
 } from './constants';
 import {
-  setPopularMoviesAction,
-  setMoviesByGenreAction
+  setMoviesAction
 } from './actions';
 
-function* fetchPopularMovies(action) {
+function* fetchMovies(action) {
   try {
-    const resp = yield api.movie.fetchPopularMovies();
-    yield put(setPopularMoviesAction(resp.data.results));
+    const resp = yield api.movie.fetchMovies(action.genreId);
+    yield put(setMoviesAction(resp.data.results));
   } catch (e) {
-    yield put(setPopularMoviesAction([]));
+    yield put(setMoviesAction([]));
     if (action.onFailure) {
       action.onFailure();
     }
   }
 }
 
-function* watchFetchPopularMovies() {
-  yield takeLeading(FETCH_POPULAR_MOVIES, fetchPopularMovies);
-}
-
-function* fetchMoviesByGenre(action) {
-  try {
-    const resp = yield api.movie.fetchMoviesByGenre(action.genreId);
-    yield put(setMoviesByGenreAction(resp.data.results));
-  } catch (e) {
-    yield put(setMoviesByGenreAction([]));
-    if (action.onFailure) {
-      action.onFailure();
-    }
-  }
-}
-
-function* watchFetchMoviesByGenre() {
-  yield takeLeading(FETCH_MOVIES_BY_GENRE, fetchMoviesByGenre);
+function* watchFetchMovies() {
+  yield takeLeading(FETCH_MOVIES, fetchMovies);
 }
 
 export const movieSagas = [
-  watchFetchPopularMovies(),
-  watchFetchMoviesByGenre()
+  watchFetchMovies()
 ];

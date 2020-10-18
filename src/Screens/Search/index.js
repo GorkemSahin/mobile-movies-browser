@@ -33,6 +33,7 @@ export default ({ route }) => {
       </View>
       <View style={ styles.listContainer }>
         <FlatList
+          showsVerticalScrollIndicator={false}
           style={{ flex: 1 }}
           data={ results }
           renderItem={(result) => <ListItem movie={ result.item }/>}/>

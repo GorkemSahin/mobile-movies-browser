@@ -1,35 +1,19 @@
 import {
-  FETCH_POPULAR_MOVIES,
-  FETCH_MOVIES_BY_GENRE,
-  SET_MOVIES_BY_GENRE,
-  SET_POPULAR_MOVIES
+  FETCH_MOVIES,
+  SET_MOVIES
 } from './constants';
   
-export const fetchPopularMoviesAction = (onFailure) => {
+export const fetchMoviesAction = (genreId, onFailure) => {
   return {
-    type: FETCH_POPULAR_MOVIES,
-    onFailure
-  };
-};
-
-export const fetchMoviesByGenreAction = (genreId, onFailure) => {
-  return {
-    type: FETCH_MOVIES_BY_GENRE,
+    type: FETCH_MOVIES,
     genreId,
     onFailure
   };
 };
 
-export const setPopularMoviesAction = (movies) => {
+export const setMoviesAction = (movies) => {
   return {
-    type: SET_POPULAR_MOVIES,
-    movies
-  };
-};
-
-export const setMoviesByGenreAction = (movies) => {
-  return {
-    type: SET_MOVIES_BY_GENRE,
+    type: SET_MOVIES,
     movies
   };
 };

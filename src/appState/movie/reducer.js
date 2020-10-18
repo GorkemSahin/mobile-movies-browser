@@ -1,15 +1,12 @@
 import {
   initialState,
-  SET_POPULAR_MOVIES,
-  SET_MOVIES_BY_GENRE
+  SET_MOVIES
 } from './constants';
 
 export const movieReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_POPULAR_MOVIES:
-      return { ...state, popularMovies: action.movies };
-    case SET_MOVIES_BY_GENRE:
-        return { ...state, moviesByGenre: action.movies };
+    case SET_MOVIES:
+      return state.concat(action.movies.filter(({ id }) => !state.find(movie => movie.id == id) ));
     default:
       return state;
   }
