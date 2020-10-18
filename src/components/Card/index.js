@@ -2,7 +2,7 @@ import React from 'react';
 import { TouchableOpacity, View, Image, Text } from 'react-native';
 import styles from './styles';
 import { THUMBNAIL_URL } from '@env'
-import {useNavigation} from '@react-navigation/core';
+import { useNavigation } from '@react-navigation/core';
 
 export default ({ movie, style }) => {
   const navigation = useNavigation();

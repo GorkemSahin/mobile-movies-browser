@@ -9,8 +9,7 @@ import { threePopularTvsSelector } from '../../appState/tv/selectors';
 import Category from '../../components/Category';
 import FeaturedCard from '../../components/FeaturedCard';
 import colors from '../../constants/colors';
-
-const category = { name: "Name", description: "Description" }
+import styles from './styles';
 
 export default () => {
 
@@ -38,10 +37,10 @@ export default () => {
     <View style={{ flex: 1, backgroundColor: colors.gray }}>
       <ScrollView showsVerticalScrollIndicator={false}>
         { featuredMovie ? <FeaturedCard movie={featuredMovie} containerStyle={{ height: 300 }}></FeaturedCard> : <></> }
-        <Category category={{ name: "Popular Movies", description: "Description" }} movies={popularMovies} containerStyle={{ flex: 1 }}></Category>
-        <Category category={{ name: "Popular TV Shows", description: "Description" }} movies={popularTvs} containerStyle={{ flex: 1 }}></Category>
-        <Category category={{ name: "Family Movies", description: "Description" }} movies={familyMovies} containerStyle={{ flex: 1 }}></Category>
-        <Category category={{ name: "Documentaries", description: "Description" }} movies={documentaryMovies} containerStyle={{ flex: 1 }}></Category>
+        <Category category={{ name: "Popular Movies", description: "Description" }} movies={popularMovies} containerStyle={{ flex: 1 }}/>
+        <Category category={{ name: "Popular TV Shows", description: "Description" }} movies={popularTvs} containerStyle={{ flex: 1 }}/>
+        <Category category={{ name: "Family Movies", description: "Description" }} movies={familyMovies} containerStyle={{ flex: 1 }}/>
+        <Category category={{ name: "Documentaries", description: "Description" }} movies={documentaryMovies} containerStyle={{ flex: 1 }}/>
       </ScrollView>
     </View>
   );

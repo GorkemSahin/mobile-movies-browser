@@ -11,6 +11,7 @@ export default ({movies}) => {
         horizontal
         data={ movies }
         showsHorizontalScrollIndicator={false}
+        keyExtractor = { (item, index) => index.toString() }
         renderItem={(movie) => <Card movie={ movie.item } style={{ width: 120 }}/> }/>
     </View>
   );

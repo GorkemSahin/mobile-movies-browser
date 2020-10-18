@@ -36,6 +36,7 @@ export default ({ route }) => {
           showsVerticalScrollIndicator={false}
           style={{ flex: 1 }}
           data={ results }
+          keyExtractor = { (item, index) => index.toString() }
           renderItem={(result) => <ListItem movie={ result.item }/>}/>
       </View>
     </View>

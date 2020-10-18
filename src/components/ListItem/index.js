@@ -6,7 +6,7 @@ import {useNavigation} from '@react-navigation/core';
 
 export default ({ movie }) => {
   const navigation = useNavigation();
-  
+
   return (
     <TouchableOpacity
       style={ styles.container }
