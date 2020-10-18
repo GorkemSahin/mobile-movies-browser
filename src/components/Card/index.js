@@ -4,10 +4,11 @@ import styles from './styles';
 import { IMAGE_URL } from '@env'
 import {useNavigation} from '@react-navigation/core';
 
-export default ({ movie }) => {
+export default ({ movie, style }) => {
   const navigation = useNavigation();
+
   return (
-    <TouchableOpacity style={{ flex: 1 }} onPress={()=>{navigation.navigate("Details", {movie})}}>
+    <TouchableOpacity style={{ flex: 1, ...style }} onPress={()=>{navigation.navigate("Details", {movie})}}>
       <View style={ styles.cardContainer }>
         <View style={ styles.imageContainer }>
           <Image
