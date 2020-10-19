@@ -9,11 +9,17 @@ export default StyleSheet.create({
     backgroundColor: colors.white,
     borderColor: colors.gray,
     borderWidth: 1,
-    padding: distances.doubleDistance,
+    paddingHorizontal: distances.doubleDistance,
+    paddingTop: distances.doubleDistance,
+    paddingBottom: distances.defaultDistance
   },
-  titleContainer: {
+  ratingContainer: {
     flex: 0,
-    marginBottom: distances.defaultDistance
+    height: 20,
+    marginBottom: distances.halfDistance,
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "flex-start"
   },
   overviewContainer: {
     flex: 0
@@ -25,6 +31,19 @@ export default StyleSheet.create({
   },
   overview: {
     fontSize: fonts.big,
-    color: colors.black,
+    color: colors.black
   },
+  playButton: {
+    width:70,
+    position: 'absolute',
+    right: 10,
+    height: 70,
+    backgroundColor: colors.pink,
+    borderRadius: 100,
+    position: 'absolute',
+    right: distances.defaultDistance,
+    top: -35,
+    borderWidth: 3,
+    borderColor: colors.white
+  }
 });

@@ -13,9 +13,6 @@ function* fetchTvs(action) {
     yield put(setTvsAction(resp.data.results));
   } catch (e) {
     yield put(setTvsAction([]));
-    if (action.onFailure) {
-      action.onFailure();
-    }
   }
 }
 

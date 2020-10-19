@@ -13,9 +13,6 @@ function* fetchMovies(action) {
     yield put(setMoviesAction(resp.data.results));
   } catch (e) {
     yield put(setMoviesAction([]));
-    if (action.onFailure) {
-      action.onFailure();
-    }
   }
 }
 

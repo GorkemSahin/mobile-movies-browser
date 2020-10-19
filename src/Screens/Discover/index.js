@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, Alert } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { featuredMovieSelector, popularMoviesSelector, documentaryMoviesSelector, familyMoviesSelector } from '../../appState/movie/selectors';
 import { fetchMoviesAction } from '../../appState/movie/actions';
@@ -8,7 +8,6 @@ import { fetchGenresAction } from '../../appState/genre/actions';
 import { threePopularTvsSelector } from '../../appState/tv/selectors';
 import Category from '../../components/Category';
 import FeaturedCard from '../../components/FeaturedCard';
-import colors from '../../constants/colors';
 import styles from './styles';
 
 export default () => {
@@ -20,11 +19,11 @@ export default () => {
     dispatch(fetchGenresAction());
     dispatch(fetchTvsAction());
     setTimeout(() => {
-      dispatch(fetchMoviesAction("10751"));
+      dispatch(fetchMoviesAction("10751")); // Genre ID for family movies
+      setTimeout(() => {
+        dispatch(fetchMoviesAction("99")); // Genre ID for documentaries
+      }, 1000);
     }, 500);
-    setTimeout(() => {
-      dispatch(fetchMoviesAction("99"));
-    }, 1000);
   }, []);
 
   const featuredMovie = useSelector(featuredMovieSelector);

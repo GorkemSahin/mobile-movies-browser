@@ -3,7 +3,7 @@ import { TouchableOpacity, View, Image, Text } from 'react-native';
 import styles from './styles';
 import { THUMBNAIL_URL } from '@env'
 import { useNavigation } from '@react-navigation/core';
-import dateParser from '../../utils/dateParser';
+import Rating from '../Rating';
 
 export default ({ movie, style }) => {
   const navigation = useNavigation();
@@ -19,14 +19,12 @@ export default ({ movie, style }) => {
         </View>
         <View style={ styles.infoContainer }>
           <View style={ styles.titleContainer }>
-            <Text style={ styles.title }>
+            <Text ellipsizeMode={ "tail" } numberOfLines={ 2 } style={ styles.title }>
               { movie.title || movie.name }
             </Text>
           </View>
-          <View style={ styles.dateContainer }>
-            <Text style={ styles.date }>
-              { dateParser(movie.release_date || movie.first_air_date) }
-            </Text>
+          <View style={ styles.ratingContainer }>
+            <Rating style={ styles.rating } rating={ movie.vote_average }/>
           </View>
         </View>
       </View>

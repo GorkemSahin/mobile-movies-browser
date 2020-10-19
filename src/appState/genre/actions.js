@@ -3,10 +3,9 @@ import {
     SET_GENRES
 } from './constants';
   
-export const fetchGenresAction = (onFailure) => {
+export const fetchGenresAction = () => {
   return {
     type: FETCH_GENRES,
-    onFailure
   };
 };
 

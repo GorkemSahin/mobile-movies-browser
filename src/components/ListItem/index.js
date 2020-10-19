@@ -3,6 +3,7 @@ import { TouchableOpacity, View, Image, Text } from 'react-native';
 import styles from './styles';
 import { THUMBNAIL_URL } from '@env'
 import {useNavigation} from '@react-navigation/core';
+import Rating from '../Rating';
 
 export default ({ movie }) => {
   const navigation = useNavigation();
@@ -23,9 +24,10 @@ export default ({ movie }) => {
             <Text style={ styles.title }>
               { movie.title || movie.name }
             </Text>
+            <Rating style={ styles.rating } rating={ movie.vote_average } />
           </View>
           <View style={ styles.overviewContainer }>
-            <Text ellipsizeMode={ 'tail' } numberOfLines={ 5 } style={ styles.overview }>
+            <Text ellipsizeMode={ 'tail' } numberOfLines={ 4 } style={ styles.overview }>
               { movie.overview }
             </Text>
           </View>

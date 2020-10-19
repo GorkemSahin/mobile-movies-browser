@@ -13,9 +13,6 @@ function* fetchGenres(action) {
     yield put(setGenresAction(resp.data.genres));
   } catch (e) {
     yield put(setGenresAction([]));
-    if (action.onFailure) {
-      action.onFailure();
-    }
   }
 }
 

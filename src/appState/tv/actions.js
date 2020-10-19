@@ -3,10 +3,9 @@ import {
     SET_TVS
 } from './constants';
   
-export const fetchTvsAction = (onFailure) => {
+export const fetchTvsAction = () => {
   return {
-    type: FETCH_TVS,
-    onFailure
+    type: FETCH_TVS
   };
 };
 

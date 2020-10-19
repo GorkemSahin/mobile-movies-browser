@@ -26,6 +26,7 @@ export default StyleSheet.create({
   text: {
     flex: 6,
     fontSize: fonts.big,
-    alignSelf: "center"
+    alignSelf: "center",
+    height: 40
   }
 });

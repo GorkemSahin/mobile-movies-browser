@@ -21,7 +21,10 @@ export default StyleSheet.create({
   },
   titleContainer: {
     flex: 2,
-    marginBottom: distances.halfDistance
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: distances.quarterDistance
   },
   overviewContainer: {
     flex: 6
@@ -42,4 +45,9 @@ export default StyleSheet.create({
     color: colors.white,
     flex: 1
   },
+  rating: {
+    justifyContent: "flex-end",
+    alignItems: "center",
+    flexDirection: "row"
+  }
 });

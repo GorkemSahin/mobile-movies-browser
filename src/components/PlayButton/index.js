@@ -5,8 +5,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default ({ style, onPress }) => {
   return (
-    <TouchableOpacity style={{ ...styles.style, style }} onPress={ onPress }>
-      <Icon name="play" size={ 32 } color="white" />
+    <TouchableOpacity style={{ ...styles.style, ...style }} onPress={ onPress }>
+      <Icon name="play" size={ 24 } color="white" />
     </TouchableOpacity>
   );
 };

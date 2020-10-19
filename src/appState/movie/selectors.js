@@ -7,7 +7,7 @@ export const featuredMovieSelector = createSelector(
 
 export const popularMoviesSelector = createSelector(
   (state) => state.movies,
-  (movies) => movies ? movies.sort((a, b) => (b.popularity - a.popularity)).slice(1, movies.length) : []
+  (movies) => movies ? movies.sort((a, b) => (b.popularity - a.popularity)).slice(1, 20) : []
 );
 
 export const familyMoviesSelector = createSelector(

@@ -3,11 +3,10 @@ import {
   SET_MOVIES
 } from './constants';
   
-export const fetchMoviesAction = (genreId, onFailure) => {
+export const fetchMoviesAction = (genreId) => {
   return {
     type: FETCH_MOVIES,
-    genreId,
-    onFailure
+    genreId
   };
 };
 

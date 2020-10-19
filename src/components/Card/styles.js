@@ -21,7 +21,7 @@ export default StyleSheet.create({
   titleContainer: {
     flex: 2
   },
-  dateContainer: {
+  ratingContainer: {
     flex: 1
   },
   image: {
@@ -34,9 +34,8 @@ export default StyleSheet.create({
     flex: 2,
     fontWeight: "bold"
   },
-  date: {
-    fontSize: fonts.small,
-    color: colors.black,
-    flex: 1
-  },
+  rating: {
+    justifyContent: "flex-end",
+    flexDirection: "row"
+  }
 });
