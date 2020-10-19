@@ -1,6 +1,8 @@
 # 24i-RN-Assignment
 A React Native application I developed based on the assignment I was given by 24i. This application uses TMDB's API (v3) to browse movies.
 
+A quick demonstration of the app can be seen here: https://youtu.be/RpdvkBPwCc0
+
 # How to run
 
 Install dependencies via
