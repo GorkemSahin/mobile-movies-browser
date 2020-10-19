@@ -7,24 +7,10 @@ export default StyleSheet.create({
   container: {
     flex: 1
   },
-  searchContainer: {
-    flex: 1,
-    flexDirection: "row",
-    alignItems: "center"
+  featuredContainer: {
+    height: 300
   },
-  iconContainer: {
-    flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    margin: distances.halfDistance
-  },
-  listContainer: {
-    flex: 10
-  },
-  text: {
-    flex: 6,
-    fontSize: fonts.big,
-    alignSelf: "center"
+  categoryContainer: {
+    flex: 1
   }
 });

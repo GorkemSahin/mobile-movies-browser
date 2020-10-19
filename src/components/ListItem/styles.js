@@ -10,22 +10,23 @@ export default StyleSheet.create({
     backgroundColor: colors.white,
     borderColor: colors.gray,
     borderWidth: 1,
-    margin: distances.quarterDistance
+    marginHorizontal: distances.defaultDistance,
+    marginTop: distances.defaultDistance
   },
   container: {
     flex: 1, 
-    height: 140,
-    flexDirection: "row"
+    height: 140
   },
   imageContainer: {
     flex: 1
   },
   infoContainer: {
     flex: 4,
-    padding: distances.halfDistance
+    padding: distances.defaultDistance
   },
   titleContainer: {
-    flex: 1
+    flex: 1,
+    marginBottom: distances.quarterDistance
   },
   overviewContainer: {
     flex: 4

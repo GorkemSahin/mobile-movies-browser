@@ -19,12 +19,17 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerTintColor: colors.pink }} navigationOptions={{ headerTransparent: true }}>
-        <Stack.Screen name="Discover" component={ Discover }
+      <Stack.Navigator
+        screenOptions={{ headerTintColor: colors.pink, headerBackTitleVisible: false }}
+        navigationOptions={{ headerTransparent: true }}>
+        <Stack.Screen
+          name="Discover"
+          component={ Discover }
           options={({ navigation }) =>
-            ({ headerRight: () => (<SearchButton onPress={ () => navigation.navigate("Search") }></SearchButton>) })
-          } />
-        <Stack.Screen name="Details" component={ Details } />
+            ({ headerRight: () => (<SearchButton onPress={ () => navigation.navigate("Search") }></SearchButton>) })} />
+        <Stack.Screen name="Details"
+          component={ Details }
+          options={({ route }) => ({ title: route.params.movie.title || route.params.movie.name})}/>
         <Stack.Screen name="Player" component={ Player } options={{ headerShown: false }}/>
         <Stack.Screen name="Search" component={ Search }/>
         <Stack.Screen name="CategoryList"

@@ -3,6 +3,7 @@ import { TouchableOpacity, View, Image, Text } from 'react-native';
 import styles from './styles';
 import { THUMBNAIL_URL } from '@env'
 import { useNavigation } from '@react-navigation/core';
+import dateParser from '../../utils/dateParser';
 
 export default ({ movie, style }) => {
   const navigation = useNavigation();
@@ -24,7 +25,7 @@ export default ({ movie, style }) => {
           </View>
           <View style={ styles.dateContainer }>
             <Text style={ styles.date }>
-              { movie.release_date || movie.first_air_date }
+              { dateParser(movie.release_date || movie.first_air_date) }
             </Text>
           </View>
         </View>

@@ -9,8 +9,7 @@ export default StyleSheet.create({
     backgroundColor: colors.white,
     borderColor: colors.gray,
     borderWidth: 1,
-    padding: distances.defaultDistance,
-    margin: distances.halfDistance
+    padding: distances.doubleDistance,
   },
   titleContainer: {
     flex: 0,

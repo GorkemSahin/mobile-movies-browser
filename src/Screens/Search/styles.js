@@ -10,7 +10,8 @@ export default StyleSheet.create({
   searchContainer: {
     flex: 1,
     flexDirection: "row",
-    alignItems: "center"
+    alignItems: "center",
+    marginTop: distances.defaultDistance
   },
   iconContainer: {
     flex: 1,
@@ -20,7 +21,7 @@ export default StyleSheet.create({
     margin: distances.halfDistance
   },
   listContainer: {
-    flex: 10
+    flex: 15
   },
   text: {
     flex: 6,

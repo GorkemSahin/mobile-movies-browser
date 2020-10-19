@@ -35,7 +35,7 @@ export default StyleSheet.create({
     fontWeight: "bold"
   },
   date: {
-    fontSize: fonts.normal,
+    fontSize: fonts.small,
     color: colors.black,
     flex: 1
   },

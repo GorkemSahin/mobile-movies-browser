@@ -8,23 +8,23 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: colors.white,
     borderColor: colors.gray,
-    height: 240,
+    height: 280,
     margin: distances.halfDistance
   },
   imageContainer: {
     flex: 1
   },
   infoContainer: {
-    height: 80,
-    backgroundColor: 'rgba(52, 52, 52, 0.5)'
+    height: 120,
+    backgroundColor: 'rgba(52, 52, 52, 0.5)',
+    padding: distances.halfDistance
   },
   titleContainer: {
     flex: 2,
-    marginLeft: distances.halfDistance,
+    marginBottom: distances.halfDistance
   },
   overviewContainer: {
-    flex: 6,
-    marginLeft: distances.halfDistance,
+    flex: 6
   },
   image: {
     flex: 1,

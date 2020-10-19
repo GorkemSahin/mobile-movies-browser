@@ -25,7 +25,7 @@ export default ({ movie }) => {
             </Text>
           </View>
           <View style={ styles.overviewContainer }>
-            <Text style={ styles.overview }>
+            <Text ellipsizeMode={ 'tail' } numberOfLines={ 5 } style={ styles.overview }>
               { movie.overview }
             </Text>
           </View>

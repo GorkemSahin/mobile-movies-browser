@@ -34,13 +34,13 @@ export default () => {
   const documentaryMovies = useSelector(documentaryMoviesSelector);
 
   return (
-    <View style={{ flex: 1, backgroundColor: colors.gray }}>
+    <View style={ styles.container }>
       <ScrollView showsVerticalScrollIndicator={false}>
-        { featuredMovie ? <FeaturedCard movie={featuredMovie} containerStyle={{ height: 300 }}></FeaturedCard> : <></> }
-        <Category category={{ name: "Popular Movies", description: "Description" }} movies={popularMovies} containerStyle={{ flex: 1 }}/>
-        <Category category={{ name: "Popular TV Shows", description: "Description" }} movies={popularTvs} containerStyle={{ flex: 1 }}/>
-        <Category category={{ name: "Family Movies", description: "Description" }} movies={familyMovies} containerStyle={{ flex: 1 }}/>
-        <Category category={{ name: "Documentaries", description: "Description" }} movies={documentaryMovies} containerStyle={{ flex: 1 }}/>
+        { featuredMovie ? <FeaturedCard movie={featuredMovie} containerStyle={ styles.featuredContainer }></FeaturedCard> : <></> }
+        <Category category={{ name: "Popular Movies", description: "Description" }} movies={popularMovies} containerStyle={ styles.categoryContainer }/>
+        <Category category={{ name: "Popular TV Shows", description: "Description" }} movies={popularTvs} containerStyle={ styles.categoryContainer }/>
+        <Category category={{ name: "Family Movies", description: "Description" }} movies={familyMovies} containerStyle={ styles.categoryContainer }/>
+        <Category category={{ name: "Documentaries", description: "Description" }} movies={documentaryMovies} containerStyle={ styles.categoryContainer }/>
       </ScrollView>
     </View>
   );

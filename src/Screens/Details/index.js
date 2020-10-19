@@ -6,7 +6,7 @@ import DescriptionCard from '../../components/DescriptionCard';
 
 export default ({ route }) => {
   const { movie } = route.params;
-  console.log(IMAGE_URL + movie.poster_path)
+
   return (
     <View style={ styles.container }>
       <ImageBackground style={ styles.image } imageStyle={{ resizeMode: "cover" }} source={{ uri: IMAGE_URL + movie.poster_path }}>
