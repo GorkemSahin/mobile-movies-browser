@@ -6,6 +6,10 @@ import api from '../../api';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import ListItem from '../../components/ListItem';
 
+/* I thought about adding pagination to lists to display more than 20 items per category
+as the user scrolled through the lists and carousels, but this was not asked in the assignment
+paper so I skipped it. */
+
 export default ({ route }) => {
 
   const [query, setQuery] = useState('');

@@ -14,6 +14,13 @@ export default () => {
 
   const dispatch = useDispatch();
 
+  /* I used hard coded values to fetch family and documentary movies in the discovery screen,
+  which is bad practice. Under ideal circumstances on a PROD app, I'd expect the back-end to decide
+  what category to display on the front-end at a given time but in this case I was given a specific
+  task of displaying these two categories. I thought about adding these genre IDs as ENV variables
+  through a config file, but that wouldn't be all that different from using hard-coded values either,
+  so I decided to go ahead with hard-coded values. */
+
   useEffect(() => {
     dispatch(fetchMoviesAction());
     dispatch(fetchGenresAction());
@@ -22,9 +29,14 @@ export default () => {
       dispatch(fetchMoviesAction("10751")); // Genre ID for family movies
       setTimeout(() => {
         dispatch(fetchMoviesAction("99")); // Genre ID for documentaries
-      }, 1000);
-    }, 500);
+      }, 600);
+    }, 600);
   }, []);
+
+  /* Since I implemented only one array for keeping movies in AppState/Store, I put delay times
+  between the dispatching of actions to fetch different categories of movies one after another
+  to make sure that two actions would not be manipulating the same array in the AppState at the
+  same time. Again, under ideal circumstances, I'd not have to do this. */
 
   const featuredMovie = useSelector(featuredMovieSelector);
   const popularMovies = useSelector(popularMoviesSelector);
