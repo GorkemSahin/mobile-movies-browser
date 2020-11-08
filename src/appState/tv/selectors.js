@@ -1,6 +1,6 @@
 import {createSelector} from 'reselect';
 
-export const threePopularTvsSelector = createSelector(
+export const tvsSelector = createSelector(
   (state) => state.tvs,
   (tvs) => tvs ? tvs : []
 );

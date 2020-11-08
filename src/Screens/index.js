@@ -8,7 +8,7 @@ import Search from './Search';
 import colors from '../constants/colors';
 import SearchButton from '../components/SearchButton';
 import Orientation from 'react-native-orientation-locker';
-import ListCategory from './ListCategory';
+import ListMovies from './ListMovies';
 
 const Stack = createStackNavigator();
 
@@ -32,8 +32,8 @@ export default function App() {
           options={({ route }) => ({ title: route.params.movie.title || route.params.movie.name})}/>
         <Stack.Screen name="Player" component={ Player } options={{ headerShown: false }}/>
         <Stack.Screen name="Search" component={ Search }/>
-        <Stack.Screen name="CategoryList"
-          component={ ListCategory }
+        <Stack.Screen name="ListMovies"
+          component={ ListMovies }
           options={({ route }) => ({ title: route.params.name })}/>
       </Stack.Navigator>
     </NavigationContainer>

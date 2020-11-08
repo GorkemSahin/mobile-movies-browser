@@ -1,6 +1,7 @@
 import {
   FETCH_MOVIES,
-  SET_MOVIES
+  SET_GENRE_MOVIES,
+  SET_POPULAR_MOVIES
 } from './constants';
   
 export const fetchMoviesAction = (genreId) => {
@@ -10,9 +11,10 @@ export const fetchMoviesAction = (genreId) => {
   };
 };
 
-export const setMoviesAction = (movies) => {
+export const setMoviesAction = (movies, genreId) => {
   return {
-    type: SET_MOVIES,
-    movies
+    type: genreId ? SET_GENRE_MOVIES : SET_POPULAR_MOVIES,
+    movies,
+    genreId
   };
 };

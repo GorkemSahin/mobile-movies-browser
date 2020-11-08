@@ -1,5 +1,5 @@
 import api from '../../api';
-import { takeEvery, takeLeading, put } from '@redux-saga/core/effects';
+import { takeEvery, put } from '@redux-saga/core/effects';
 import {
   FETCH_MOVIES
 } from './constants';
@@ -10,14 +10,14 @@ import {
 function* fetchMovies(action) {
   try {
     const resp = yield api.movie.fetchMovies(action.genreId);
-    yield put(setMoviesAction(resp.data.results));
+    yield put(setMoviesAction(resp.data.results, action.genreId));
   } catch (e) {
-    yield put(setMoviesAction([]));
+    yield put(setMoviesAction([], action.genreId));
   }
 }
 
 function* watchFetchMovies() {
-  yield takeLeading(FETCH_MOVIES, fetchMovies);
+  yield takeEvery(FETCH_MOVIES, fetchMovies);
 }
 
 export const movieSagas = [

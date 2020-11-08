@@ -4,7 +4,7 @@ import styles from './styles';
 import colors from '../../constants/colors';
 import api from '../../api';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import ListItem from '../../components/ListItem';
+import MovieListItem from '../../components/MovieListItem';
 
 /* I thought about adding pagination to lists to display more than 20 items per category
 as the user scrolled through the lists and carousels, but this was not asked in the assignment
@@ -41,7 +41,7 @@ export default ({ route }) => {
           style={{ flex: 1 }}
           data={ results }
           keyExtractor = { (item, index) => index.toString() }
-          renderItem={(result) => <ListItem movie={ result.item }/>}/>
+          renderItem={(result) => <MovieListItem movie={ result.item }/>}/>
       </View>
     </View>
   );

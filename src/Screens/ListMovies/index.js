@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { View, FlatList } from 'react-native';
 import styles from './styles';
-import ListItem from '../../components/ListItem';
+import MovieListItem from '../../components/MovieListItem';
 
-export default ({ route, navigation }) => {
+export default ({ route }) => {
   return (
     <View style={ styles.container }>
       <FlatList
@@ -11,7 +11,7 @@ export default ({ route, navigation }) => {
         style={{ flex: 1 }}
         data={ route.params.movies }
         keyExtractor = { (item, index) => index.toString() }
-        renderItem={(movie) => <ListItem movie={ movie.item }/>}/>
+        renderItem={(movie) => <MovieListItem movie={ movie.item }/>}/>
     </View>
   );
 };
