@@ -15,9 +15,11 @@ export default () => {
 
   const dispatch = useDispatch();
 
+  const onFail = () => alert('Please check your internet connection.');
+
   useEffect(() => {
-    dispatch(fetchGenresAction());
-    dispatch(fetchMoviesAction());
+    dispatch(fetchGenresAction(onFail));
+    dispatch(fetchMoviesAction(onFail));
   }, []);
 
   const featuredMovie = useSelector(featuredMovieSelector);

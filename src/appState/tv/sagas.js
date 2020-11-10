@@ -12,6 +12,7 @@ function* fetchTvs(action) {
     const resp = yield api.tv.fetchTvs();
     yield put(setTvsAction(resp.data.results));
   } catch (e) {
+    if (action.onFail) action.onFail();
     yield put(setTvsAction([]));
   }
 }

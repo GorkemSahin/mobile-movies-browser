@@ -12,6 +12,7 @@ function* fetchGenres(action) {
     const resp = yield api.genre.fetchGenres();
     yield put(setGenresAction(resp.data.genres));
   } catch (e) {
+    if (action.onFail) action.onFail();
     yield put(setGenresAction([]));
   }
 }

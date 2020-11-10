@@ -4,10 +4,11 @@ import {
   SET_POPULAR_MOVIES
 } from './constants';
   
-export const fetchMoviesAction = (genreId) => {
+export const fetchMoviesAction = (onFail, genreId) => {
   return {
     type: FETCH_MOVIES,
-    genreId
+    genreId,
+    onFail
   };
 };
 

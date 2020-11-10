@@ -14,12 +14,21 @@ export default ({ route }) => {
 
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
-  useEffect(() =>{
-    if (query.length > 0 ){
-      api.movie.searchMovies(query).then((resp) => setResults(resp.data.results));
-    } else {
-      setResults([]);
+
+  useEffect(() => {
+    const fetchResults = async () => {
+      if (query.length > 2 ){
+        try {
+          const { data: { results }} = await api.movie.searchMovies(query);
+          setResults(results);
+        } catch {
+          alert('Please check your internet connection.');
+        }
+      } else {
+        setResults([]);
+      }
     }
+    fetchResults();
   },[query]);
 
   return (

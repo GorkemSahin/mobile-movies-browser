@@ -18,8 +18,10 @@ export default ({ genreId }) => {
 
   const isTv = genreId === "tv";
 
+  const onFail = () => alert('Please check your internet connection.');
+
   useEffect(() => {
-    dispatch(isTv ? fetchTvsAction() : fetchMoviesAction(genreId));
+    dispatch(isTv ? fetchTvsAction(onFail) : fetchMoviesAction(onFail, genreId));
   }, []);
 
   const movies = useSelector(isTv ? tvsSelector :

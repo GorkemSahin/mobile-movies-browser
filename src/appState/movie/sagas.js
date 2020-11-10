@@ -12,6 +12,7 @@ function* fetchMovies(action) {
     const resp = yield api.movie.fetchMovies(action.genreId);
     yield put(setMoviesAction(resp.data.results, action.genreId));
   } catch (e) {
+    if (action.onFail) action.onFail();
     yield put(setMoviesAction([], action.genreId));
   }
 }
