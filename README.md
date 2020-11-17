@@ -65,19 +65,19 @@ Reads constant configuration data from the .env file.
 
 ## Modules and Folder Scaffolding
 
-### /api
+### api
 
 Contains the functions for making external API calls, developed with Axios.
 
-### /appState
+### appState
 
-Contains sagas, selectors, reducers and constants for app state management and middleware implementation.
+Contains sagas, selectors, reducers and constants for app state management and middleware implementation. 
 
-### /assets
+### assets
 
 Contains the dummy video to play from the details screen of TV shows and movies.
 
-### /components
+### components
 
 Contains dummy components without any functionality such as fetching data or manipulating app state.
 
@@ -100,7 +100,7 @@ Contains Axios utils and other helper functions.
 
 ## Notes
 
-I started developing it as an Expo app but had to eject later on because the react-native-video dependency, which was required for this assignment, was incompatible with Expo.
+I started developing it as an Expo app but had to eject later on because the react-native-video dependency, which was required for this assignment, was incompatible with Expo. The Expo-detached project had too many problems so I decided to start a new project from scratch and copy the components, methods and screens I had already developed to the new project. You can see this on the commit history.
 
 I did not add the environment config file with the API key to .gitignore because it was a private repo anyway.
 
