@@ -17,6 +17,8 @@ Start the metro bundler with
 
 `npm start`
 
+For the iOS build, you need to go to the /ios directory and install pods with `pod install`.
+
 Build and run using
 
 `react-native run-ios`
