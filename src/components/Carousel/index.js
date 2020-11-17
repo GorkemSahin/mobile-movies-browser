@@ -1,18 +1,18 @@
 import React from 'react';
 import { View, FlatList } from 'react-native';
-import Card  from '../Card';
+import MediaCard  from '../MediaCard';
 import styles from './styles';
 
-export default ({movies}) => {
+export default ({ media }) => {
   return (
     <View style={ styles.carouselContainer }>
       <FlatList
         style={{ flex: 1 }}
         horizontal
-        data={ movies }
+        data={ media }
         showsHorizontalScrollIndicator={false}
-        keyExtractor = { (item, index) => index.toString() }
-        renderItem={(movie) => <Card movie={ movie.item } style={{ width: 120 }}/> }/>
+        keyExtractor = { (mediaItem, index) => mediaItem.id.toString() }
+        renderItem={ (mediaItem) => <MediaCard media={ mediaItem.item } style={{ width: 120 }}/> }/>
     </View>
   );
 };

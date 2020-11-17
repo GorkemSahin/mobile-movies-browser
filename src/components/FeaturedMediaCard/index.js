@@ -6,22 +6,22 @@ import {useNavigation} from '@react-navigation/core';
 import Rating from '../Rating';
 import colors from '../../constants/colors';
 
-export default ({ movie }) => {
+export default ({ media }) => {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity style={{ flex: 1 }} onPress={()=>{navigation.navigate("Details", {movie})}}>
+    <TouchableOpacity style={{ flex: 1 }} onPress={()=>{navigation.navigate("Details", { media })}}>
       <View style={ styles.cardContainer }>
-        <ImageBackground style={ styles.image } source={{ uri: IMAGE_URL + movie.poster_path }}>
+        <ImageBackground style={ styles.image } source={{ uri: IMAGE_URL + media.poster_path }}>
           <View style={ styles.infoContainer }>
             <View style={ styles.titleContainer }>
               <Text style={ styles.title }>
-                { movie.title || movie.name }
+                { media.title || media.name }
               </Text>
-              <Rating style={ styles.rating } rating={ movie.vote_average } textStyle={{ color: colors.pink, fontWeight: "bold" }}/>
+              <Rating style={ styles.rating } rating={ media.vote_average } textStyle={{ color: colors.pink, fontWeight: "bold" }}/>
             </View>
             <View style={ styles.overviewContainer }>
               <Text ellipsizeMode={ 'tail' } numberOfLines={ 4 } style={ styles.overview }>
-                { movie.overview }
+                { media.overview }
               </Text>
             </View>
           </View>

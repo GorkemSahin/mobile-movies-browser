@@ -5,33 +5,25 @@ import Carousel from '../../components/Carousel';
 import Button from '../../components/Button';
 import { useNavigation } from '@react-navigation/core';
 import { useSelector, useDispatch } from 'react-redux';
-import { popularMoviesSelector, moviesSelectorByGenre } from '../../appState/movie/selectors';
-import { tvsSelector } from '../../appState/tv/selectors';
-import { fetchMoviesAction } from '../../appState/movie/actions';
-import { fetchTvsAction } from '../../appState/tv/actions';
-import { genreSelector } from '../../appState/genre/selectors';
+import { mediaSelector } from '../../appState/media/selectors';
+import { fetchMediaAction } from '../../appState/media/actions';
 
-export default ({ genreId }) => {
+export default ({ category }) => {
+  const { name, mediaType, genreId, description } = category;
 
   const dispatch = useDispatch();
   const navigation = useNavigation();
 
-  const isTv = genreId === "tv";
-
   const onFail = () => alert('Please check your internet connection.');
 
   useEffect(() => {
-    dispatch(isTv ? fetchTvsAction(onFail) : fetchMoviesAction(onFail, genreId));
+    dispatch(fetchMediaAction(mediaType, genreId, onFail));
   }, []);
 
-  const movies = useSelector(isTv ? tvsSelector :
-    (genreId ? moviesSelectorByGenre(genreId) : popularMoviesSelector));
-
-  const genre = useSelector(genreSelector(genreId));
-  const name = isTv ? "TV Shows" : genre ? genre.name : "Popular Movies";
+  const media = useSelector(mediaSelector)({ mediaType, genreId });
 
   return (
-    <View style={ styles.categoryContainer }>
+    <View style={ styles.container }>
       <View style={ styles.headerContainer }>
         <View style={ styles.infoContainer }>
           <View style={ styles.nameContainer }>
@@ -41,15 +33,15 @@ export default ({ genreId }) => {
           </View>
           <View style={ styles.descriptionContainer }>
             <Text style={ styles.description }>
-              {"Description"}
+              { description }
             </Text>
           </View>
         </View>
         <View style={ styles.buttonContainer }>
-          <Button title={"MORE"} onPress={ () => navigation.navigate("ListMovies", { name: name, movies }) }></Button>
+          <Button title={"MORE"} onPress={ () => navigation.navigate("ListMedia", { name, media }) }></Button>
         </View>
       </View>
-      <Carousel movies={ movies }></Carousel>
+      <Carousel media={ media }></Carousel>
     </View>
   );
 };

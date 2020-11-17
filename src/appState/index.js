@@ -1,24 +1,16 @@
-import {createStore, applyMiddleware, combineReducers} from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import {all} from 'redux-saga/effects';
-import { movieReducer } from './movie/reducer';
-import { movieSagas } from './movie/sagas';
-import { tvReducer } from './tv/reducer';
-import { genreReducer } from './genre/reducer';
-import { genreSagas } from './genre/sagas';
-import { tvSagas } from './tv/sagas';
+import { all } from 'redux-saga/effects';
+import { mediaReducer } from './media/reducer';
+import { mediaSagas } from './media/sagas';
 
 const reducer = combineReducers({
-  movies: movieReducer,
-  tvs: tvReducer,
-  genres: genreReducer
+  media: mediaReducer
 });
 
 function* allSagas() {
   yield all([
-    ...movieSagas,
-    ...tvSagas,
-    ...genreSagas
+    ...mediaSagas
   ]);
 }
 

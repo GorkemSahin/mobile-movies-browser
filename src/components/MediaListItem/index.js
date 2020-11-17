@@ -5,30 +5,30 @@ import { THUMBNAIL_URL } from '@env'
 import {useNavigation} from '@react-navigation/core';
 import Rating from '../Rating';
 
-export default ({ movie }) => {
+export default ({ media, style }) => {
   const navigation = useNavigation();
 
   return (
     <TouchableOpacity
-      style={ styles.container }
-      onPress={()=>{navigation.navigate("Details", {movie})}}>
+      style={{ ...styles.container, ...style }}
+      onPress={()=>{navigation.navigate("Details", { media })}}>
       <View style={ styles.cardContainer }>
         <View style={ styles.imageContainer }>
           <Image
             style={ styles.image }
-            source={{ uri: THUMBNAIL_URL + movie.poster_path }}
+            source={{ uri: THUMBNAIL_URL + media.poster_path }}
           />
         </View>
         <View style={ styles.infoContainer }>
           <View style={ styles.titleContainer }>
             <Text style={ styles.title }>
-              { movie.title || movie.name }
+              { media.title || media.name }
             </Text>
-            <Rating style={ styles.rating } rating={ movie.vote_average } />
+            <Rating style={ styles.rating } rating={ media.vote_average } />
           </View>
           <View style={ styles.overviewContainer }>
             <Text ellipsizeMode={ 'tail' } numberOfLines={ 4 } style={ styles.overview }>
-              { movie.overview }
+              { media.overview }
             </Text>
           </View>
         </View>

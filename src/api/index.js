@@ -1,9 +1,5 @@
-import movie from './movie';
-import tv from './tv';
-import genre from './genre';
+import media from './media';
 
 export default {
-  movie,
-  tv,
-  genre
+  media
 };

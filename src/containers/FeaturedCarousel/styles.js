@@ -4,7 +4,7 @@ import distances from '../../constants/distances';
 import fonts from '../../constants/fonts';
 
 export default StyleSheet.create({
-  categoryContainer: {
+  container: {
     flex: 1,
     marginVertical: distances.halfDistance,
     borderColor: colors.black

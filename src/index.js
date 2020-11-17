@@ -4,7 +4,9 @@ import {store} from './appState';
 import {Provider} from 'react-redux';
 
 export default () => {
-	return <Provider store={store}>
+	return (
+		<Provider store={store}>
       <Screens />
-	</Provider>
+		</Provider>
+	)
 };

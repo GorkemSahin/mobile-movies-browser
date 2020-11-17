@@ -1,14 +1,11 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, FlatList, TextInput } from 'react-native';
 import styles from './styles';
 import colors from '../../constants/colors';
 import api from '../../api';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import MovieListItem from '../../components/MovieListItem';
-
-/* I thought about adding pagination to lists to display more than 20 items per category
-as the user scrolled through the lists and carousels, but this was not asked in the assignment
-paper so I skipped it. */
+import MediaListItem from '../../components/MediaListItem';
+import { MOVIE } from '../../appState/media/constants';
 
 export default ({ route }) => {
 
@@ -19,7 +16,7 @@ export default ({ route }) => {
     const fetchResults = async () => {
       if (query.length > 2 ){
         try {
-          const { data: { results }} = await api.movie.searchMovies(query);
+          const { data: { results }} = await api.media.searchMedia(MOVIE, query);
           setResults(results);
         } catch {
           alert('Please check your internet connection.');
@@ -50,7 +47,7 @@ export default ({ route }) => {
           style={{ flex: 1 }}
           data={ results }
           keyExtractor = { (item, index) => index.toString() }
-          renderItem={(result) => <MovieListItem movie={ result.item }/>}/>
+          renderItem={(result) => <MediaListItem media={ result.item }/>}/>
       </View>
     </View>
   );
