@@ -12,3 +12,4 @@ export const TV = "tv";
 export const POPULAR = "popular";
 export const FETCH_MEDIA = '@MEDIA_FETCH';
 export const SET_MEDIA = '@MEDIA_SET';
+export const SEARCH_MEDIA = '@MEDIA_SEARCH';

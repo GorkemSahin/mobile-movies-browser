@@ -1,11 +1,10 @@
 import api from '../../api';
-import { takeEvery, put } from '@redux-saga/core/effects';
+import { takeEvery, takeLeading, put } from '@redux-saga/core/effects';
 import {
-  FETCH_MEDIA
+  FETCH_MEDIA,
+  SEARCH_MEDIA
 } from './constants';
-import {
-  setMediaAction
-} from './actions';
+import { setMediaAction } from './actions';
 
 function* fetchMedia(action) {
   try {
@@ -21,6 +20,20 @@ function* watchFetchMedia() {
   yield takeEvery(FETCH_MEDIA, fetchMedia);
 }
 
+function* searchMedia(action) {
+  try {
+    const resp = yield api.media.searchMedia(action.mediaType, action.query);
+    if (action.onSuccess) action.onSuccess(resp.data.results);
+  } catch (e) {
+    if (action.onFail) action.onFail();
+  }
+}
+
+function* watchSearchMedia() {
+  yield takeLeading(SEARCH_MEDIA, searchMedia);
+}
+
 export const mediaSagas = [
-  watchFetchMedia()
+  watchFetchMedia(),
+  watchSearchMedia()
 ];

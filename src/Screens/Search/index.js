@@ -2,30 +2,31 @@ import React, { useEffect, useState } from 'react';
 import { View, FlatList, TextInput } from 'react-native';
 import styles from './styles';
 import colors from '../../constants/colors';
-import api from '../../api';
+import { searchMediaAction } from '../../appState/media/actions';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MediaListItem from '../../components/MediaListItem';
 import { MOVIE } from '../../appState/media/constants';
+import { useDispatch } from 'react-redux';
 
-export default ({ route }) => {
+
+export default () => {
+
+  const dispatch = useDispatch();
 
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
 
-  useEffect(() => {
-    const fetchResults = async () => {
-      if (query.length > 2 ){
-        try {
-          const { data: { results }} = await api.media.searchMedia(MOVIE, query);
-          setResults(results);
-        } catch {
-          alert('Please check your internet connection.');
-        }
-      } else {
-        setResults([]);
-      }
+  const onFail = () => {
+    setResults([]);
+    alert("Something went wrong.")
+  }
+
+  useEffect(() => {
+    if (query.length > 2 ){
+      dispatch(searchMediaAction(MOVIE, query, setResults, onFail));
+    } else {
+      setResults([]);
     }
-    fetchResults();
   },[query]);
 
   return (

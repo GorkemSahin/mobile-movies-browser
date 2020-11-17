@@ -14,7 +14,7 @@ export default ({ category }) => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
 
-  const onFail = () => alert('Please check your internet connection.');
+  const onFail = () => alert('Something went wrong.');
 
   useEffect(() => {
     dispatch(fetchMediaAction(mediaType, genreId, onFail));
