@@ -17,7 +17,7 @@ export default StyleSheet.create({
     marginHorizontal: distances.halfDistance
   },
   infoContainer: {
-    flex: 1,
+    flex: 2,
     justifyContent: 'center'
   },
   buttonContainer: {

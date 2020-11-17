@@ -19,11 +19,10 @@ export default ({ media }) => {
               </Text>
               <Rating style={ styles.rating } rating={ media.vote_average } textStyle={{ color: colors.pink, fontWeight: "bold" }}/>
             </View>
-            <View style={ styles.overviewContainer }>
-              <Text ellipsizeMode={ 'tail' } numberOfLines={ 4 } style={ styles.overview }>
-                { media.overview }
-              </Text>
-            </View>
+            <Text
+              ellipsizeMode={ 'tail' } numberOfLines={ 4 } style={ styles.overview }>
+              { media.overview }
+            </Text>
           </View>
         </ImageBackground>
       </View>

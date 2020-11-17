@@ -11,21 +11,12 @@ export default StyleSheet.create({
     borderWidth: 1,
     margin: distances.quarterDistance
   },
-  imageContainer: {
-    flex: 2
-  },
   infoContainer: {
     flex: 1,
     padding: distances.quarterDistance
   },
-  titleContainer: {
-    flex: 2
-  },
-  ratingContainer: {
-    flex: 1
-  },
   image: {
-    flex: 1,
+    flex: 2,
     resizeMode: "cover"
   },
   title: {
@@ -36,6 +27,7 @@ export default StyleSheet.create({
   },
   rating: {
     justifyContent: "flex-end",
-    flexDirection: "row"
+    flexDirection: "row",
+    flex: 1
   }
 });

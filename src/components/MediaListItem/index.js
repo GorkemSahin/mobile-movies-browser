@@ -13,24 +13,24 @@ export default ({ media, style }) => {
       style={{ ...styles.container, ...style }}
       onPress={()=>{navigation.navigate("Details", { media })}}>
       <View style={ styles.cardContainer }>
-        <View style={ styles.imageContainer }>
-          <Image
-            style={ styles.image }
-            source={{ uri: THUMBNAIL_URL + media.poster_path }}
-          />
-        </View>
+        <Image
+          containerStyle={ styles.imageContainer }
+          style={ styles.image }
+          source={{ uri: THUMBNAIL_URL + media.poster_path }}
+        />
         <View style={ styles.infoContainer }>
           <View style={ styles.titleContainer }>
-            <Text style={ styles.title }>
+            <Text containerStyle style={ styles.title }>
               { media.title || media.name }
             </Text>
             <Rating style={ styles.rating } rating={ media.vote_average } />
           </View>
-          <View style={ styles.overviewContainer }>
-            <Text ellipsizeMode={ 'tail' } numberOfLines={ 4 } style={ styles.overview }>
-              { media.overview }
-            </Text>
-          </View>
+          <Text ellipsizeMode={ 'tail' }
+            numberOfLines={ 4 }
+            style={ styles.overview }
+            containerStyle={ styles.overviewContainer }>
+            { media.overview }
+          </Text>
         </View>
       </View>
     </TouchableOpacity>

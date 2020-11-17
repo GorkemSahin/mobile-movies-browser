@@ -11,8 +11,5 @@ export default StyleSheet.create({
   starContainer: {
     flex: 0,
     marginRight: distances.quarterDistance
-  },
-  ratingContainer: {
-    flex: 0
   }
 });

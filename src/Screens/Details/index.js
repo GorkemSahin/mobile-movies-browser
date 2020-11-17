@@ -19,11 +19,9 @@ export default ({ route, navigation }) => {
         <View style={ styles.ratingContainer }>
           <Rating style={ styles.rating } textStyle={{ fontWeight: "bold" }} rating={ media.vote_average }/>
         </View>
-        <View style={ styles.overviewContainer }>
-          <Text style={ styles.overview }>
-            { media.overview }
-          </Text>
-        </View>
+        <Text  containerStyle={ styles.overviewContainer } style={ styles.overview }>
+          { media.overview }
+        </Text>
       </View>
     </ScrollView>
   );

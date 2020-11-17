@@ -26,20 +26,17 @@ export default ({ category }) => {
     <View style={ styles.container }>
       <View style={ styles.headerContainer }>
         <View style={ styles.infoContainer }>
-          <View style={ styles.nameContainer }>
-            <Text style={ styles.name }>
-              { name }
-            </Text>
-          </View>
-          <View style={ styles.descriptionContainer }>
-            <Text style={ styles.description }>
-              { description }
-            </Text>
-          </View>
+          <Text style={ styles.name }>
+            { name }
+          </Text>
+          <Text style={ styles.description }>
+            { description }
+          </Text>
         </View>
-        <View style={ styles.buttonContainer }>
-          <Button title={"MORE"} onPress={ () => navigation.navigate("ListMedia", { name, media }) }></Button>
-        </View>
+        <Button
+          containerStyle={ styles.buttonContainer }
+          title={"MORE"}
+          onPress={ () => navigation.navigate("ListMedia", { name, media }) }/>
       </View>
       <Carousel media={ media }></Carousel>
     </View>

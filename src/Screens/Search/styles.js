@@ -21,7 +21,8 @@ export default StyleSheet.create({
     margin: distances.halfDistance
   },
   listContainer: {
-    flex: 15
+    flex: 15,
+    marginTop: distances.defaultDistance
   },
   text: {
     flex: 6,

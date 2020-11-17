@@ -26,9 +26,6 @@ export default StyleSheet.create({
     alignItems: "center",
     marginBottom: distances.quarterDistance
   },
-  overviewContainer: {
-    flex: 6
-  },
   image: {
     flex: 1,
     resizeMode: "cover",
@@ -43,7 +40,7 @@ export default StyleSheet.create({
   overview: {
     fontSize: fonts.normal,
     color: colors.white,
-    flex: 1
+    flex: 0
   },
   rating: {
     justifyContent: "flex-end",

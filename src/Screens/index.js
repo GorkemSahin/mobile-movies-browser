@@ -26,7 +26,7 @@ export default function App() {
           name="Discover"
           component={ Discover }
           options={({ navigation }) =>
-            ({ headerRight: () => (<SearchButton onPress={ () => navigation.navigate("Search") }></SearchButton>) })} />
+            ({ headerRight: () => (<SearchButton onPress={ () => navigation.navigate("Search") }/>) })} />
         <Stack.Screen name="Details"
           component={ Details }
           options={({ route }) => ({ title: route.params.media.title || route.params.media.name})}/>

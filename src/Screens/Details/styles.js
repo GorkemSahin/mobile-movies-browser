@@ -10,7 +10,7 @@ export default StyleSheet.create({
     backgroundColor: colors.white
   },
   image: {
-    height: height * 7 / 10,
+    minHeight: height * 7 / 10,
     resizeMode: "cover"
   },
   descriptionContainer: {

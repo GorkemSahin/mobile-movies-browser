@@ -10,11 +10,9 @@ export default ({ rating, style, textStyle }) => {
       <View style={ styles.starContainer }>
         <Icon name="star" size={ 12 } color={ colors.pink } iconStyle={{ color: colors.pink }}/>
       </View>
-      <View style={ styles.ratingContainer }>
-        <Text style={{ ...textStyle }}>
-          { rating + "/10" }
-        </Text>
-      </View>
+      <Text style={{ ...textStyle }}>
+        { rating + "/10" }
+      </Text>
     </View>
   );
 };

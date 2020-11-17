@@ -11,17 +11,14 @@ export default StyleSheet.create({
     borderColor: colors.gray,
     borderWidth: 1,
     marginHorizontal: distances.defaultDistance,
-    marginTop: distances.defaultDistance
+    marginBottom: distances.defaultDistance
   },
   container: {
     flex: 1, 
     height: 140
   },
-  imageContainer: {
-    flex: 1
-  },
   infoContainer: {
-    flex: 4,
+    flex: 6,
     padding: distances.defaultDistance
   },
   titleContainer: {
@@ -35,7 +32,7 @@ export default StyleSheet.create({
     flex: 4
   },
   image: {
-    flex: 1,
+    flex: 2,
     resizeMode: "cover"
   },
   title: {

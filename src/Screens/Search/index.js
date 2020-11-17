@@ -47,7 +47,7 @@ export default () => {
           showsVerticalScrollIndicator={false}
           style={{ flex: 1 }}
           data={ results }
-          keyExtractor = { (item, index) => index.toString() }
+          keyExtractor = { (item, index) => item.id.toString() }
           renderItem={(result) => <MediaListItem media={ result.item }/>}/>
       </View>
     </View>

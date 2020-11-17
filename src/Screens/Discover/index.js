@@ -16,10 +16,15 @@ export default () => {
   return (
     <View style={ styles.container }>
       <ScrollView showsVerticalScrollIndicator={false}>
-        { featuredMedia ? <FeaturedMediaCard media={ featuredMedia } containerStyle={ styles.featuredContainer }/> : <></> }
+        { featuredMedia ? <FeaturedMediaCard
+          media={ featuredMedia }
+          containerStyle={ styles.featuredContainer }/> : <></> }
         {
           discoverConstants.map((category) =>
-            <FeaturedCarousel key={ category.mediaType + category.genreId } category={ category } containerStyle={ styles.categoryContainer }/>)
+            <FeaturedCarousel
+              key={ category.mediaType + category.genreId }
+              category={ category }
+              containerStyle={ styles.categoryContainer }/>)
         }
       </ScrollView>
     </View>
