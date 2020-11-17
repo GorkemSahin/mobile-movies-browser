@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {Text, View, Image } from 'react-native';
 import { IMAGE_URL } from '@env';
 import styles from './styles';
 import PlayButton from '../../components/PlayButton';
 import Rating from '../../components/Rating';
 
-export default ({ route }) => {
+export default ({ route, navigation }) => {
   const { media } = route.params;
 
   return (
