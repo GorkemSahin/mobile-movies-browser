@@ -1,24 +1,24 @@
-import {Platform, StyleSheet} from 'react-native';
+import { StyleSheet} from 'react-native';
 import colors from '../../constants/colors';
 import fonts from '../../constants/fonts';
 import distances from '../../constants/distances';
+import { height } from '../../constants/dimensions';
 
 export default StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: colors.white
   },
   image: {
-    flex: 1,
+    height: height * 7 / 10,
     resizeMode: "cover"
   },
   descriptionContainer: {
     flex: 0,
+    borderTopColor: colors.gray,
+    borderTopWidth: 1,
     backgroundColor: colors.white,
-    borderColor: colors.gray,
-    borderWidth: 1,
-    paddingHorizontal: distances.doubleDistance,
-    paddingTop: distances.doubleDistance,
-    paddingBottom: distances.defaultDistance
+    padding: distances.doubleDistance
   },
   ratingContainer: {
     flex: 0,

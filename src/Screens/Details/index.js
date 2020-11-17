@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, Image } from 'react-native';
+import { ScrollView, Text, View, Image } from 'react-native';
 import { IMAGE_URL } from '@env';
 import styles from './styles';
 import PlayButton from '../../components/PlayButton';
@@ -9,7 +9,10 @@ export default ({ route, navigation }) => {
   const { media } = route.params;
 
   return (
-    <View style={ styles.container }>
+    <ScrollView
+      style={ styles.container }
+      showsVerticalScrollIndicator={ false }
+      bounces="never">
       <Image style={ styles.image } source={{ uri: IMAGE_URL + media.poster_path }}/>
       <View style={ styles.descriptionContainer }>
         <PlayButton style={ styles.playButton } onPress={ ()=>{ navigation.navigate("Player", { sample: true }) }}></PlayButton>
@@ -22,6 +25,6 @@ export default ({ route, navigation }) => {
           </Text>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };

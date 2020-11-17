@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { featuredMovieSelector } from '../../appState/media/selectors';
 import FeaturedCarousel from '../../containers/FeaturedCarousel';
 import FeaturedMediaCard from '../../components/FeaturedMediaCard';
 import styles from './styles';
 
 // You can configure which categories to display by changing this file.
-import discoverConstants from '../../utils/discoverConstants';
+import discoverConstants from '../../constants/discoverContent';
 
 export default () => {
 

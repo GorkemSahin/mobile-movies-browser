@@ -1,7 +1,5 @@
-import { MOVIE, TV, POPULAR } from '../../appState/media/constants';
+import { MOVIE, TV, POPULAR } from '../appState/media/constants';
 
-/* Genre IDs to be displayed on the discover screen.
-Null genreId means popular movies regardless of their genres. */
 export default [
   {
     name: "Popular Movies",
