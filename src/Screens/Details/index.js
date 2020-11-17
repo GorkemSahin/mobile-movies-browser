@@ -15,7 +15,7 @@ export default ({ route, navigation }) => {
       bounces="never">
       <Image style={ styles.image } source={{ uri: IMAGE_URL + media.poster_path }}/>
       <View style={ styles.descriptionContainer }>
-        <PlayButton style={ styles.playButton } onPress={ ()=>{ navigation.navigate("Player", { sample: true }) }}></PlayButton>
+        <PlayButton style={ styles.playButton } onPress={ ()=>{ navigation.navigate("Player", { sample: true }) }}/>
         <View style={ styles.ratingContainer }>
           <Rating style={ styles.rating } textStyle={{ fontWeight: "bold" }} rating={ media.vote_average }/>
         </View>

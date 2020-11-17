@@ -6,6 +6,7 @@ export const featuredMovieSelector = createSelector(
   (movies) => movies ? movies.sort((a, b) => (b.popularity - a.popularity))[0] : null
 );
 
+// Please see the media contants file for a brief explanation of the appstate structure.
 export const mediaSelector = createSelector(
   (state) => state.media,
   (media) =>

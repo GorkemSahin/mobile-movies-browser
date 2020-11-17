@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { View, StatusBar } from 'react-native';
+/* react-native-video-controls is a library based on react-native-video
+as requested by the assignment paper. It only provides player controller UI. */
 import VideoPlayer from 'react-native-video-controls';
 import Orientation from 'react-native-orientation-locker';
 

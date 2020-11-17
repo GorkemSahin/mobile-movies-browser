@@ -6,7 +6,7 @@ import FeaturedCarousel from '../../containers/FeaturedCarousel';
 import FeaturedMediaCard from '../../components/FeaturedMediaCard';
 import styles from './styles';
 
-// You can configure which categories to display by changing this file.
+// You can configure how many and which categories to display in featured carousels by changing this file.
 import discoverConstants from '../../constants/discoverContent';
 
 export default () => {
@@ -16,9 +16,12 @@ export default () => {
   return (
     <View style={ styles.container }>
       <ScrollView showsVerticalScrollIndicator={false}>
-        { featuredMedia ? <FeaturedMediaCard
-          media={ featuredMedia }
-          containerStyle={ styles.featuredContainer }/> : <></> }
+        { featuredMedia ?
+          <FeaturedMediaCard
+            media={ featuredMedia }
+            containerStyle={ styles.featuredContainer }/>
+          : <></>
+        }
         {
           discoverConstants.map((category) =>
             <FeaturedCarousel
