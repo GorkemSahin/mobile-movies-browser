@@ -20,7 +20,7 @@ export default ({ category }) => {
     dispatch(fetchMediaAction(mediaType, genreId, onFail));
   }, []);
 
-  const media = useSelector(mediaSelector)({ mediaType, genreId });
+  const media = useSelector(mediaSelector)(mediaType, genreId);
 
   return (
     <View style={ styles.container }>

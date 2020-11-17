@@ -1,5 +1,5 @@
 import {createSelector} from 'reselect';
-import memoize from 'lodash.memoize';
+import { memoize } from "lodash";
 
 export const featuredMovieSelector = createSelector(
   (state) => state.media.movie.popular,
@@ -9,7 +9,8 @@ export const featuredMovieSelector = createSelector(
 export const mediaSelector = createSelector(
   (state) => state.media,
   (media) =>
-    memoize(({ mediaType, genreId }) => {
+    memoize((mediaType, genreId) => {
       return media[mediaType] ? media[mediaType][genreId] : [];
-    })
+    },
+    (mediaType, genreId) => mediaType + genreId)
 );
