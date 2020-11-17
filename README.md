@@ -29,6 +29,10 @@ or
 
 Alternatively you can browse the /ios or /android folders using Xcode or Android Studio and build from there.
 
+In case you get an "Execution failed for task app:validateSigning" error while building for Android, you can generate a new key in /android/app directory using the following command:
+
+`keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000`
+
 
 ## Frameworks, Libraries and Tools Used
 
